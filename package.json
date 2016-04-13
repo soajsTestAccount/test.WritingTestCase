@@ -1,0 +1,43 @@
+{
+  "name": "test.WritingTestCase",
+  "description": "How to write test cases",
+  "version": "0.0.1",
+  "author": {
+    "name": "soajs team",
+    "email": "team@soajs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:soajsTestAccount/test.WritingTestCase.git"
+  },
+  "license": "Apache-2.0",
+  "engines": {
+    "node": "*"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    //"soajs": "git+https://github.com/soajs/soajs.git#develop"
+    "soajs": "0.3.*"
+  },
+  "devDependencies": {
+    "soajs.controller": "0.1.*",
+    "soajs.mongodb.data": "0.1.*",
+    "soajs.urac": "0.1.*",
+    "soajs.oauth": "0.1.*",
+    "grunt": "0.4.5",
+    "grunt-contrib-jshint": "0.10.0",
+    "grunt-jsdoc": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-mocha-test": "*",
+    "grunt-env": "*",
+    "grunt-istanbul": "0.3.0",
+    "grunt-coveralls": "*",
+    "jshint": "*",
+    "lodash": "*",
+    "mocha": "*",
+    "request": "*",
+    "shelljs": "*"
+  }
+}
