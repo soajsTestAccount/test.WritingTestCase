@@ -1,5 +1,7 @@
 "use strict";
 
+// define the config to connect to the database
+
 module.exports = function(name, prefix) {
 	return {
 		"name": name,

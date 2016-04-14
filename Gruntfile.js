@@ -96,16 +96,21 @@ module.exports = function (grunt) {
 		//   }
 		// },
 
+
 		env: {
+			// ****** set needed env variables
 			mochaTest: {
-				// NODE_ENV: 'test',
-				// APP_DIR: process.cwd(),
+				NODE_ENV: 'test',
+				SOAJS_ENV: 'dev',
+				SOAJS_DAEMON_GRP_CONF: "testCase",
 				APP_DIR_FOR_CODE_COVERAGE: '../',
 				SOAJS_SRVIP: '127.0.0.1'
 			},
 			coverage: {
-				// NODE_ENV: 'test',
-				// APP_DIR: process.cwd(),
+				// for example stop emails
+				NODE_ENV: 'test',
+				SOAJS_ENV: 'dev',
+				SOAJS_DAEMON_GRP_CONF: "testCase",
 				APP_DIR_FOR_CODE_COVERAGE: '../test/coverage/instrument/',
 				SOAJS_SRVIP: '127.0.0.1'
 			}
@@ -121,8 +126,9 @@ module.exports = function (grunt) {
 		},
 
 		instrument: {
-			files: ['index.js', 'config.js', 'lib/*.js'],
-			//files: ['**/*.js'],
+			// ****** include all the code files required
+			files: ['index.js', 'config.js', 'lib/*.js', 'daemon/*.js'],
+			
 			options: {
 				lazy: false,
 				basePath: 'test/coverage/instrument/'
@@ -150,6 +156,7 @@ module.exports = function (grunt) {
 					reporter: 'spec',
 					timeout: 90000
 				},
+				// ******
 				src: ['test/unit/*.js']
 			},
 			integration: {
@@ -157,7 +164,7 @@ module.exports = function (grunt) {
 					reporter: 'spec',
 					timeout: 90000
 				},
-				// starting point
+				// ****** starting point
 				src: ['test/integration/_servers.test.js']
 			}
 		},

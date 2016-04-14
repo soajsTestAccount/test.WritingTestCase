@@ -1,16 +1,11 @@
 "use strict";
+
 var request = require("request");
+
 var registry = require("./registry.js");
 var Mongo = require("soajs").mongo;
 var mongo;
 
-var testConsole = {
-	log: function () {
-		if (process.env.SHOW_LOGS === 'true') {
-			console.log.apply(this, arguments);
-		}
-	}
-};
 
 module.exports = {
 	getKey: function () {
@@ -23,8 +18,9 @@ module.exports = {
 
 	getMongo: function () {
 		if (!mongo) {
+			// define your db connections
 			mongo = {};
-			mongo.commerce = new Mongo(registry("commerce", ""));
+			mongo.testCase = new Mongo(registry("testCase", ""));
 			mongo.core = new Mongo(registry("core_provision", ""));
 			mongo.urac = new Mongo(registry("TNT1_urac", ""));
 		}
@@ -41,11 +37,7 @@ module.exports = {
 		if (params.qs) requestOptions.qs = params.qs;
 		if (params.form !== undefined) requestOptions.form = params.form;
 
-		testConsole.log('===========================================================================');
-		testConsole.log('==== URI     :', params.uri);
-		testConsole.log('==== REQUEST :', JSON.stringify(requestOptions));
 		request[method](requestOptions, function (err, response, body) {
-			testConsole.log('==== RESPONSE:', JSON.stringify(body));
 			return cb(err, body, response);
 		});
 	}

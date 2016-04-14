@@ -18,14 +18,13 @@
     "test": "grunt test"
   },
   "dependencies": {
-    //"soajs": "git+https://github.com/soajs/soajs.git#develop"
     "soajs": "0.3.*"
   },
   "devDependencies": {
+    // ******** include dependencies needed to run the test
     "soajs.controller": "0.1.*",
     "soajs.mongodb.data": "0.1.*",
     "soajs.urac": "0.1.*",
-    "soajs.oauth": "0.1.*",
     "grunt": "0.4.5",
     "grunt-contrib-jshint": "0.10.0",
     "grunt-jsdoc": "*",
