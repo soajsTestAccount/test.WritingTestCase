@@ -1,5 +1,5 @@
 "use strict";
-var async = require("async");
+
 var assert = require("assert");
 var helper = require("../helper.js");
 var mongo = helper.getMongo();

@@ -5,7 +5,10 @@ var request = require("request");
 var helper = require("../helper");
 var mongo = helper.getMongo();
 
+// Any file that is not in the test folder should be required using the helper,
+// because you do not want to worry about location path with reference to the test folder
 var config = helper.requireModule('./config');
+
 // ***** load the error messages for easier matching
 var errorCodes = config.errors;
 
@@ -149,7 +152,7 @@ describe("Testing Service APIs", function () {
 	describe("Last Test", function () {
 
 		it("Login", function (done) {
-			// manipulate data to get desired results
+			// ****** manipulate data to get desired results
 			mongo.urac.remove("users", {'username': "user1"}, function (err) {
 				var loginParams = {
 					uri: 'http://127.0.0.1:4000/urac/login',
@@ -166,6 +169,7 @@ describe("Testing Service APIs", function () {
 					assert.ok(body);
 					console.log(body.errors);
 					assert.equal(body.result, false);
+					assert.deepEqual(body.errors.details[0], {"code": 401, "message": 'Unable to log in the user. User not found.'});
 					done();
 				});
 

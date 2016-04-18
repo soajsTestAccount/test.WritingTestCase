@@ -42,7 +42,7 @@ describe("importing sample data", function () {
 			// wait for all services to start & register before starting tests
 
 			setTimeout(function () {
-				//require("./service.test.js");
+				require("./service.test.js");
 				require("./daemon.test.js");
 				done();
 			}, 1000);

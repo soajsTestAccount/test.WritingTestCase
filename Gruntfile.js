@@ -1,6 +1,5 @@
 'use strict';
 
-
 var fs = require('fs');
 var path = require('path');
 
@@ -151,20 +150,23 @@ module.exports = function (grunt) {
 		},
 
 		mochaTest: {
+			// Use unit tests when you test without using request or any other external repo
+			// ie only internal functions
 			unit: {
 				options: {
 					reporter: 'spec',
 					timeout: 90000
 				},
-				// ******
+				// ****** all files
 				src: ['test/unit/*.js']
 			},
+			// Use when testing apis
 			integration: {
 				options: {
 					reporter: 'spec',
 					timeout: 90000
 				},
-				// ****** starting point
+				// ****** starting point, one file that requires the rest of the files
 				src: ['test/integration/_servers.test.js']
 			}
 		},
