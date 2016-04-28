@@ -3,7 +3,7 @@ var shell = require('shelljs');
 var assert = require('assert');
 var helper = require("../helper.js");
 
-var sampleData = require("soajs.mongodb.data/modules/testing");
+var sampleData = require("soajs.mongodb.data/modules/testing/index.js");
 
 var mainService, urac, controller;
 

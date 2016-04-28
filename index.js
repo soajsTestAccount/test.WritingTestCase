@@ -9,7 +9,7 @@ service.init(function () {
 
 	service.get("/buildName", function (req, res) {
 		//write your business logic here
-		var fullName = req.soajs.inputmaskData.firstName + '' + req.soajs.inputmaskData.lastName;
+		var fullName = req.soajs.inputmaskData.firstName + ' ' + req.soajs.inputmaskData.lastName;
 		utils.getInfo(req, function () {
 			res.json(req.soajs.buildResponse(null, {
 				fullName: fullName

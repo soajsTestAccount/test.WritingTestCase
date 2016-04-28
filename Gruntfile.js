@@ -46,8 +46,7 @@ var lib = {
 module.exports = function (grunt) {
 	//Loading the needed plugins to run the grunt tasks
 	var pluginsRootPath = lib.findRoot();
-	lib.loadTasks(grunt, pluginsRootPath, ['grunt-contrib-jshint', 'grunt-jsdoc', 'grunt-contrib-clean', 'grunt-mocha-test', 'grunt-env'
-		, 'grunt-istanbul', 'grunt-coveralls']);
+	lib.loadTasks(grunt, pluginsRootPath, ['grunt-contrib-jshint', 'grunt-jsdoc', 'grunt-contrib-clean', 'grunt-mocha-test', 'grunt-env', 'grunt-istanbul', 'grunt-coveralls']);
 	grunt.initConfig({
 		//Defining jshint tasks
 		jshint: {

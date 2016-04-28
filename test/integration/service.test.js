@@ -110,7 +110,7 @@ describe("Testing Service APIs", function () {
 				assert.ok(body.data);
 				assert.ok(body.data.fullName);
 				// ******  verify expected output
-				//assert.equal(body.data.fullName, 'Eliane Nassif');
+				assert.equal(body.data.fullName, 'Eliane Nassif');
 				done();
 			});
 		});
