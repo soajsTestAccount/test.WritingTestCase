@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	serviceName: "myService",
+	serviceName: "myservice",
 	requestTimeout: 30,
 	requestTimeoutRenewal: 5,
 	servicePort: 8010,

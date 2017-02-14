@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	serviceName: "myDaemon",
+	serviceName: "mydaemon",
 	servicePort: 3050,
 	type: 'daemon',
 	prerequisites: {},
